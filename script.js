@@ -6,7 +6,7 @@ let count = document.querySelector('#count');
 let wins = document.querySelector('#wins');
 let loses = document.querySelector('#loses');
 let level = document.querySelector('#level');
-//background music
+// background music
 // window.addEventListener('click',()=>{
 //     document.querySelector('#song').play();
 // })
@@ -25,6 +25,7 @@ count.textContent = 5;
 console.log(randomNumber);
 
 submit.addEventListener("click",()=>{
+    document.querySelector('#click').play();
     count.textContent -= 1;
     if(guessedNumber.value > 50 || guessedNumber.value < 1){
         responce.textContent = "Number must be between 1 and 50.";
@@ -48,6 +49,14 @@ submit.addEventListener("click",()=>{
         randomNumber = Math.floor(Math.random()*50);
         console.log(randomNumber);
     }
+    if(templevel === 3 && tempWins === 3){
+        document.querySelector('#win').play();
+        setTimeout(() => {
+            window.alert("HUURAY YOU'VE WON");
+            location.reload();
+        },2000);
+        
+    }
     if(tempWins === 3){
         templevel +=1;
         level.textContent = templevel;
@@ -58,21 +67,32 @@ submit.addEventListener("click",()=>{
         }else if(templevel === 3){
             count.textContent = 3;
             temploses = 0;
-
         }
 
         
     }
+    
     if(count.textContent == 0){
         temploses += 1;
         randomNumber = Math.floor(Math.random()*50);
         console.log(randomNumber);
         loses.textContent = temploses;
-        count.textContent = 5;
+        if((temploses === 1 && templevel ===2) || (temploses === 2 && templevel === 2)){
+            count.textContent = 4;
+        }else if((temploses === 1 && templevel ===3) || (temploses === 2 && templevel === 3)){
+            count.textContent = 3;
+        } else{
+            count.textContent = 5;
+        }
+        
     }
     if(temploses === 3){
-        window.alert(`SORRY YOU'VE LOST THE GAME`)
+        document.querySelector('#fail').play();
+        setTimeout(() => {
+            window.alert(`SORRY YOU'VE LOST THE GAME`)
         location.reload();
+        }, 2000);
+        
     }
 })
 
