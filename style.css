@@ -6,7 +6,7 @@
 .maindiv{
     height: 35rem;
     width: 35rem;
-    background-color: #e4dfc1;
+    background-color: #A76F6F;
     border: 4px black solid;
     border-radius: 4rem;
     margin: auto;
@@ -14,18 +14,18 @@
 .responcediv{
     height: 70px;
     width: 100%;
-    background-color: #e4dfc1;
+    background-color: #A76F6F;
     
 }
 .gameheading{
     text-align: center;
     margin-top: 3rem;
-    background-color: #e4dfc1;
+    background-color: #A76F6F;
 }
-.text,.responce,.countattempt,#count{
+.text,.responce,.countattempt,#count,#wins,#loses,#level{
     text-align: center;
     font-size: 25px;
-    background-color: #e4dfc1;
+    background-color: #A76F6F;
 }
 #GuessedNumber{
     height: 2rem;
@@ -43,7 +43,7 @@
 .inputs{
     position: relative;
     left: 80px;
-    background-color: #e4dfc1;
+    background-color: #A76F6F;
     display: inline;
     
 }
@@ -53,9 +53,9 @@
 .wl{
 height: 70px;
 width: 400px;
-background-color: #e4dfc1;
+background-color: #A76F6F;
 }
 .wl > p, #levels{
 font-size: 25px;
-background-color: #e4dfc1;
+background-color: #A76F6F;
 }

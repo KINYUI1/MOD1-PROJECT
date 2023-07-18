@@ -35,26 +35,30 @@ submit.addEventListener("click",()=>{
     }else if(guessedNumber.value > randomNumber){
         responce.textContent = "Your guess is greater than actual.";
     }else if(guessedNumber.value == randomNumber){
-        responce.textContent = "CORRECT.";
-        tempWins = tempWins + 1;
-        wins.textContent = tempWins;
-        if(templevel === 1){
-            count.textContent = 5;
-        }else if(templevel === 2){
-            count.textContent = 4;
-        }else if(templevel === 3){
-            count.textContent = 3;
-        }
+        document.querySelector('#correct').play();
+        setTimeout(() => {
+            responce.textContent = "CORRECT.";
+            tempWins = tempWins + 1;
+            wins.textContent = tempWins;
+            if(templevel === 1){
+                count.textContent = 5;
+            }else if(templevel === 2){
+                count.textContent = 4;
+            }else if(templevel === 3){
+                count.textContent = 3;
+            }
+            
+            randomNumber = Math.floor(Math.random()*50);
+            console.log(randomNumber);
+            }, 1);
         
-        randomNumber = Math.floor(Math.random()*50);
-        console.log(randomNumber);
     }
     if(templevel === 3 && tempWins === 3){
         document.querySelector('#win').play();
         setTimeout(() => {
             window.alert("HUURAY YOU'VE WON");
             location.reload();
-        },2000);
+        },1);
         
     }
     if(tempWins === 3){
@@ -91,7 +95,7 @@ submit.addEventListener("click",()=>{
         setTimeout(() => {
             window.alert(`SORRY YOU'VE LOST THE GAME`)
         location.reload();
-        }, 2000);
+        }, 1);
         
     }
 })
