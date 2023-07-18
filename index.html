@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="maindiv">
+      <h1 class="gameheading">NUMBER GUESSING GAME</h1>
+      <p class="text">Guess a number between 1 and 50</p>
+      <div class="responcediv">
+        <p class="responce"></p>
+      </div>
+      <div class="inputs">
+        <input
+          type="number"
+          placeholder="INPUT GUESSED NUMBER"
+          id="GuessedNumber"
+        />
+        <button type="submit" id="submit">Check</button>
+      </div>
+      <div class="countdown"></div>
+      <p class="countattempt">
+        YOU HAVE <span id="count"></span> ATTEMPTS LEFT.
+      </p>
+      <div class="info">
+        <div class="wl">
+          <p >wins: <span id="wins">0</span></p>
+          <p >loses: <span id="loses">0</span></p>
+        </div >
+        <div class="wl">
+          <p  id="levels">level: <span id="level">1</span></p>
+        </div>
+      </div>
+    </div>
+    <audio id="song" loop="true" src="./mixkit-game-level-music-689.wav"></audio>
+  </body>
+</html>

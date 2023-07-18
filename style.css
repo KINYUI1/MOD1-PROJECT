@@ -1,0 +1,61 @@
+*{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: #e4dfc1;
+}
+
+.maindiv{
+    height: 35rem;
+    width: 35rem;
+    background-color: #e4dfc1;
+    border: 4px black solid;
+    border-radius: 4rem;
+    margin: auto;
+}
+.responcediv{
+    height: 70px;
+    width: 100%;
+    background-color: #e4dfc1;
+    
+}
+.gameheading{
+    text-align: center;
+    margin-top: 3rem;
+    background-color: #e4dfc1;
+}
+.text,.responce,.countattempt,#count{
+    text-align: center;
+    font-size: 25px;
+    background-color: #e4dfc1;
+}
+#GuessedNumber{
+    height: 2rem;
+    width: 17rem;
+    border-radius: 10px;
+}
+#submit{
+    height: 2.3rem;
+    width: 6rem;
+    background-color: greenyellow;
+    border-radius: 10px;
+    font-size: large;
+    display: inline;
+}
+.inputs{
+    position: relative;
+    left: 80px;
+    background-color: #e4dfc1;
+    display: inline;
+    
+}
+.info{
+    display: flex;
+}
+.wl{
+height: 70px;
+width: 400px;
+background-color: #e4dfc1;
+}
+.wl > p, #levels{
+font-size: 25px;
+background-color: #e4dfc1;
+}
