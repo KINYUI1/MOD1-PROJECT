@@ -1,8 +1,16 @@
 *{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Snell Roundhand, cursive;
     background-color: #e4dfc1;
 }
-
+.cheetContainer {
+    height: 1.5rem;
+    width: 1.5rem;
+    color: #e4dfc1;
+    background-color: #e4dfc1;
+}
+.cheetContainer:hover{
+    color: black;
+}
 .maindiv{
     height: 35rem;
     width: 35rem;
@@ -21,6 +29,7 @@
     text-align: center;
     margin-top: 3rem;
     background-color: #A76F6F;
+    font-family: Snell Roundhand, cursive;
 }
 .text,.responce,.countattempt,#count,#wins,#loses,#level{
     text-align: center;

@@ -1,11 +1,14 @@
 let guessedNumber = document.getElementById("GuessedNumber");
 let submit = document.querySelector("#submit");
 let responce = document.querySelector(".responce");
-let randomNumber = Math.floor(Math.random()*50);
+let randomNumber = Math.floor(Math.random()*49+1);
 let count = document.querySelector('#count');
 let wins = document.querySelector('#wins');
 let loses = document.querySelector('#loses');
 let level = document.querySelector('#level');
+let cheetContainer = document.querySelector('.cheetContainer');
+cheetContainer.textContent = randomNumber;
+
 // background music
 // window.addEventListener('click',()=>{
 //     document.querySelector('#song').play();
@@ -47,11 +50,13 @@ submit.addEventListener("click",()=>{
             count.textContent = 3;
         }
         
-        randomNumber = Math.floor(Math.random()*50);
+        randomNumber = Math.floor(Math.random()*49+1);
+        cheetContainer.textContent = randomNumber;
         console.log(randomNumber);
         
     }
     if(templevel === 3 && tempWins === 3){
+        templevel = 0;
         document.querySelector('#win').play();
         setTimeout(() => {
             window.alert("HUURAY YOU'VE WON");
@@ -76,7 +81,8 @@ submit.addEventListener("click",()=>{
     
     if(count.textContent == 0){
         temploses += 1;
-        randomNumber = Math.floor(Math.random()*50);
+        randomNumber = Math.floor(Math.random()*49+1);
+        cheetContainer.textContent = randomNumber;
         console.log(randomNumber);
         loses.textContent = temploses;
         if((temploses === 1 && templevel ===2) || (temploses === 2 && templevel === 2)){
@@ -94,8 +100,14 @@ submit.addEventListener("click",()=>{
             window.alert(`SORRY YOU'VE LOST THE GAME`)
         location.reload();
         }, 2000);
+        count.textContent = 0;
         
     }
+    if((templevel == 2 && tempWins == 0)|| (templevel == 3 && tempWins == 0)){
+        document.querySelector('#nextLevel').play();
+        wins.textContent = 'O';
+    }
+    guessedNumber.value = null;
 })
 
 
