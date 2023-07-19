@@ -6,13 +6,13 @@ let count = document.querySelector('#count');
 let wins = document.querySelector('#wins');
 let loses = document.querySelector('#loses');
 let level = document.querySelector('#level');
-let cheetContainer = document.querySelector('.cheetContainer');
-cheetContainer.textContent = randomNumber;
+let cheatContainer = document.querySelector('.cheatContainer');
+cheatContainer.textContent = randomNumber;
 
 // background music
-// window.addEventListener('click',()=>{
-//     document.querySelector('#song').play();
-// })
+window.addEventListener('click',()=>{
+    document.querySelector('#song').play();
+})
 
 //temporal level variable
 let templevel = 1;
@@ -51,7 +51,7 @@ submit.addEventListener("click",()=>{
         }
         
         randomNumber = Math.floor(Math.random()*49+1);
-        cheetContainer.textContent = randomNumber;
+        cheatContainer.textContent = randomNumber;
         console.log(randomNumber);
         
     }
@@ -82,7 +82,7 @@ submit.addEventListener("click",()=>{
     if(count.textContent == 0){
         temploses += 1;
         randomNumber = Math.floor(Math.random()*49+1);
-        cheetContainer.textContent = randomNumber;
+        cheatContainer.textContent = randomNumber;
         console.log(randomNumber);
         loses.textContent = temploses;
         if((temploses === 1 && templevel ===2) || (temploses === 2 && templevel === 2)){

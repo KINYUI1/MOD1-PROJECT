@@ -2,13 +2,13 @@
     font-family: Snell Roundhand, cursive;
     background-color: #e4dfc1;
 }
-.cheetContainer {
+.cheatContainer {
     height: 1.5rem;
     width: 1.5rem;
     color: #e4dfc1;
     background-color: #e4dfc1;
 }
-.cheetContainer:hover{
+.cheatContainer:hover{
     color: black;
 }
 .maindiv{
