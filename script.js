@@ -69,9 +69,9 @@ submit.addEventListener("click",()=>{
     }
     if(templevel === 3 && tempWins === 3){
         templevel = 0;
-        document.querySelector('#song').pause();
         document.querySelector('#win').play();
         setTimeout(() => {
+            document.querySelector('#song').pause();
             window.alert("HUURAY YOU'VE WON");
             location.reload();
         },2000);
