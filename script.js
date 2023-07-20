@@ -1,7 +1,19 @@
+const randomNum = ()=>{
+    return Math.floor(Math.random()*49+1);
+}
+const fail = ()=>{
+    document.querySelector('#fail').play();
+        setTimeout(() => {
+            document.querySelector('#song').pause();
+            window.alert(`SORRY YOU'VE LOST THE GAME`)
+        location.reload();
+        }, 2000);
+}
+
 let guessedNumber = document.getElementById("GuessedNumber");
 let submit = document.querySelector("#submit");
 let responce = document.querySelector(".responce");
-let randomNumber = Math.floor(Math.random()*49+1);
+let randomNumber = randomNum();
 let count = document.querySelector('#count');
 let wins = document.querySelector('#wins');
 let loses = document.querySelector('#loses');
@@ -50,7 +62,7 @@ submit.addEventListener("click",()=>{
             count.textContent = 3;
         }
         
-        randomNumber = Math.floor(Math.random()*49+1);
+        randomNumber = randomNum();
         cheatContainer.textContent = randomNumber;
         console.log(randomNumber);
         
@@ -82,7 +94,7 @@ submit.addEventListener("click",()=>{
     
     if(count.textContent == 0){
         temploses += 1;
-        randomNumber = Math.floor(Math.random()*49+1);
+        randomNumber = randomNum();
         cheatContainer.textContent = randomNumber;
         console.log(randomNumber);
         loses.textContent = temploses;
@@ -96,16 +108,11 @@ submit.addEventListener("click",()=>{
         
     }
     if(temploses === 3){
-        document.querySelector('#fail').play();
-        setTimeout(() => {
-            document.querySelector('#song').pause();
-            window.alert(`SORRY YOU'VE LOST THE GAME`)
-        location.reload();
-        }, 2000);
+        fail();
         count.textContent = 0;
         
     }
-    if((templevel == 2 && tempWins == 0)|| (templevel == 3 && tempWins == 0)){
+    if((templevel == 2 && tempWins == 0 && temploses == 0 && count.textContent == 4)|| (templevel == 3 && tempWins == 0 && temploses == 0 && count.textContent == 3)){
         document.querySelector('#nextLevel').play();
         wins.textContent = 'O';
     }
