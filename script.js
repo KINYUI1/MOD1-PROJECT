@@ -57,6 +57,7 @@ submit.addEventListener("click",()=>{
     }
     if(templevel === 3 && tempWins === 3){
         templevel = 0;
+        document.querySelector('#song').pause();
         document.querySelector('#win').play();
         setTimeout(() => {
             window.alert("HUURAY YOU'VE WON");
@@ -97,6 +98,7 @@ submit.addEventListener("click",()=>{
     if(temploses === 3){
         document.querySelector('#fail').play();
         setTimeout(() => {
+            document.querySelector('#song').pause();
             window.alert(`SORRY YOU'VE LOST THE GAME`)
         location.reload();
         }, 2000);
