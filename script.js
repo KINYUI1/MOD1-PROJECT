@@ -115,6 +115,11 @@ submit.addEventListener("click",()=>{
     if((templevel == 2 && tempWins == 0 && temploses == 0 && count.textContent == 4)|| (templevel == 3 && tempWins == 0 && temploses == 0 && count.textContent == 3)){
         document.querySelector('#nextLevel').play();
         wins.textContent = 'O';
+        if(templevel == 2){
+            document.querySelector('#song').playbackRate = 1.1;
+        }else if(templevel == 3){
+            document.querySelector('#song').playbackRate = 1.2;
+        }
     }
     guessedNumber.value = null;
 })
